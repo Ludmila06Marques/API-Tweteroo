@@ -9,9 +9,10 @@ app.use(express.json())
 const usuarios=[]
 const tweets=[]
 const usuario={username:"",avatar:""}
-const tweet={username:"" , tweet:"" ,avatar:""}
+
 
 app.post("/sign-up",(req,res)=>{
+ 
 
         usuario.username=req.body.username
         usuario.avatar=req.body.avatar
@@ -21,7 +22,8 @@ app.post("/sign-up",(req,res)=>{
 })
 
 app.post("/tweets",(req,res)=>{
-  
+   
+    const tweet={username:"" , tweet:"" ,avatar:""}
     tweet.username=req.body.username
     tweet.tweet=req.body.tweet
     tweet.avatar=usuario.avatar
@@ -31,7 +33,12 @@ res.send("ok")
 })
 
 
+app.get("/tweets" , (req,res)=>{
+    
+    const newArray=tweets.slice(-10)
 
+    res.send(newArray)
+    })
 
 app.listen(5000,()=>{
 
