@@ -1,3 +1,3 @@
 #Tweteroo
 
-<h5>API for login , sign-up ,</h5>
+<h5>API for login , sign-up , create a tweet and get all tweets</h5>
